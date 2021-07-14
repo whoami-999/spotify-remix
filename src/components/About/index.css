@@ -1,0 +1,43 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+}
+.profile-name {
+  color: white;
+}
+.container {
+  display: flex;
+}
+.follower-count-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  padding: 0px;
+}
+.count-text {
+  color: #1db954;
+  margin-bottom: 0px;
+}
+.text-heading {
+  color: #9b9b9b;
+  padding-top: 8px;
+  margin-top: 0px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.logout-button {
+  margin-top: 10px;
+  color: white;
+  background: #181818;
+  border: 1px solid white;
+  border-radius: 25px;
+  width: 100px;
+
+  height: 30px;
+  cursor: pointer;
+}

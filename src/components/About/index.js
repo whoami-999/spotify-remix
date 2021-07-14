@@ -77,8 +77,8 @@ class About extends Component {
   }
 
   render() {
-    const {isLoading, data} = this.state
-    console.log(data)
+    const {isLoading} = this.state
+
     return (
       <div className="profile-container">
         {isLoading ? this.loadingComponent() : this.renderProfile()}

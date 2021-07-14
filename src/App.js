@@ -2,6 +2,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import SpotifyClone from './components/SpotifyClone'
 import About from './components/About'
 import Home from './components/Home'
+import YourMusic from './components/YourMusic'
 import LoginForm from './components/LoginForm'
 import ProtectedRoute from './components/ProtectedRoute'
 
@@ -16,6 +17,7 @@ const App = () => (
         <div className="side">
           <ProtectedRoute exact path="/about" component={About} />
           <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute exact path="/music" component={YourMusic} />
         </div>
       </div>
     </Switch>

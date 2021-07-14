@@ -1,13 +1,13 @@
 import {Component} from 'react'
 import './index.css'
 
-class Featured extends Component {
+class GenreMood extends Component {
   renderPlaylist = () => {
     const {data} = this.props
     const {imgUrl, name} = data
     return (
       <li className="album-details">
-        <img src={imgUrl} className="album-img" alt={name} />
+        <img className="album-img" src={imgUrl} alt={name} />
         <p className="album-desc">{name}</p>
       </li>
     )
@@ -18,4 +18,4 @@ class Featured extends Component {
   }
 }
 
-export default Featured
+export default GenreMood

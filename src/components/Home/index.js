@@ -1,11 +1,16 @@
 import {Component} from 'react'
-
 import moment from 'moment'
+import GenreMood from '../GenreMood'
 import Featured from '../FeaturedPlaylists'
 import './index.css'
 
 class Home extends Component {
-  state = {isLoading: true, featuredPlaylists: []}
+  state = {
+    isLoading: true,
+    featuredPlaylists: [],
+    genreAndMood: [],
+    newReleases: [],
+  }
 
   componentDidMount() {
     this.getFeaturedPlaylists()
@@ -39,22 +44,74 @@ class Home extends Component {
         name: eachFeatured.name,
       }),
     )
+
+    const genreAndMoodsApi = 'https://api.spotify.com/v1/browse/categories'
+    const genreAndMoodResponse = await fetch(genreAndMoodsApi, options)
+    const genreAndMoodPlaylistData = await genreAndMoodResponse.json()
+    // console.log(genreAndMoodPlaylistData)
+    const formattedGenreAndMoodsData = genreAndMoodPlaylistData.categories.items.map(
+      each => ({
+        id: each.id,
+        imgUrl: each.icons[0].url,
+        name: each.name,
+      }),
+    )
+
+    const getNewReleasesApi = `https://api.spotify.com/v1/browse/new-releases?country=${country}`
+    const getNewReleasesResponse = await fetch(getNewReleasesApi, options)
+    const getNewReleasesData = await getNewReleasesResponse.json()
+    const formattedNewReleaseData = getNewReleasesData.albums.items.map(
+      each => ({
+        id: each.id,
+        imgUrl: each.images[0].url,
+        name: each.name,
+      }),
+    )
     this.setState({
       isLoading: false,
       featuredPlaylists: formattedFeaturedPlaylistsData,
+      genreAndMood: formattedGenreAndMoodsData,
+      newReleases: formattedNewReleaseData,
     })
   }
 
+  loadingComponent = () => (
+    <div className="loading-component">
+      <img
+        src="https://res.cloudinary.com/df9mebfal/image/upload/v1626158282/Spotify/Blocks-1s-200px_xlztcm.gif"
+        alt="loading"
+      />
+    </div>
+  )
+
   render() {
-    const {isLoading, featuredPlaylists} = this.state
+    const {isLoading, featuredPlaylists, genreAndMood, newReleases} = this.state
     return (
       <div className="home-container">
-        <h1 className="sub-heading">Editor&apos;s picks</h1>
         {isLoading ? (
-          <h1>Loading....</h1>
+          this.loadingComponent()
         ) : (
-          featuredPlaylists.map(each => <Featured key={each.id} data={each} />)
+          <>
+            <h1 className="sub-heading">Editor&apos;s picks</h1>
+            <ul className="album-container">
+              {featuredPlaylists.map(each => (
+                <Featured key={each.id} data={each} />
+              ))}
+            </ul>
+            <h1 className="sub-heading">Genres & Moods</h1>
+            <ul className="album-container">
+              {genreAndMood.map(each => (
+                <GenreMood key={each.id} data={each} />
+              ))}
+            </ul>
+          </>
         )}
+        <h1 className="sub-heading">New releases</h1>
+        <ul className="album-container">
+          {newReleases.map(each => (
+            <Featured key={each.id} data={each} />
+          ))}
+        </ul>
       </div>
     )
   }

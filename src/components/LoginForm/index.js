@@ -84,12 +84,12 @@ class LoginForm extends Component {
       return 'http://localhost:3000/login'
     }
     /* Change this redirectURL accordingly before publishing your project and ADD THIS URL to your Application Redirect URIs to redirect after authentication success OR failure */
-    return 'https://sample.ccbp.tech/login'
+    return 'https://sr999.ccbp.tech/login'
   }
 
   openLoginModal = () => {
     // YOU NEED TO ADD YOUR CLIENT ID HERE
-    const clientId = 'c9133dffda9c4ed19ea8e9c346ed8195'
+    const clientId = '28699531a6e5440eb16420e1da3356db'
 
     const redirectUrl = this.getRedirectURL()
 

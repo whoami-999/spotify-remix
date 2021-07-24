@@ -1,0 +1,43 @@
+.music-list-container {
+  list-style-type: none;
+}
+.artist-track-container {
+  display: flex;
+  margin-top: 0px;
+  margin-left: 15px;
+  flex-direction: column;
+}
+.song-track-container {
+  display: flex;
+}
+.song-img {
+  width: 100px;
+  border-radius: 12px;
+  height: 100px;
+}
+.time {
+  color: #9b9b9b;
+  align-self: center;
+  margin-right: 60px;
+}
+.artist {
+  font-family: 'Roboto';
+  color: #9b9b9b;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+.track-container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  display: flex;
+}
+.track {
+  font-family: 'Roboto';
+  color: white;
+  padding-top: 15px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  font-weight: 500;
+  font-size: 18px;
+}

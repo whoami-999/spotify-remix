@@ -4,7 +4,7 @@ import {Component} from 'react'
 import './index.css'
 
 class About extends Component {
-  state = {isLoading: true, data: ''}
+  state = {isLoading: true, data: '', playlist: 0}
 
   componentDidMount() {
     this.getProfileData()
@@ -27,12 +27,23 @@ class About extends Component {
     const response = await fetch(api, options)
     const data = await response.json()
 
+    const username = data.id
+
+    const playlistApi = `https://api.spotify.com/v1/users/${username}/playlists?limit=50`
+
+    const playlistResponse = await fetch(playlistApi, options)
+    const playlistData = await playlistResponse.json()
+
     const formattedData = {
       name: data.display_name,
       followers: data.followers.total,
     }
 
-    this.setState({isLoading: false, data: formattedData})
+    this.setState({
+      isLoading: false,
+      data: formattedData,
+      playlist: playlistData.total,
+    })
   }
 
   loadingComponent = () => (
@@ -43,7 +54,7 @@ class About extends Component {
   )
 
   renderProfile = () => {
-    const {data} = this.state
+    const {data, playlist} = this.state
     return (
       <>
         <img
@@ -57,7 +68,7 @@ class About extends Component {
             <p className="text-heading">FOLLOWERS</p>
           </div>
           <div className="follower-count-container">
-            <p className="count-text">6</p>
+            <p className="count-text">{playlist}</p>
             <p className="text-heading">PLAYLISTS</p>
           </div>
         </div>

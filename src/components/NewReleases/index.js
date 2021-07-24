@@ -2,13 +2,13 @@ import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import './index.css'
 
-class Featured extends Component {
+class NewReleases extends Component {
   renderPlaylist = () => {
     const {data} = this.props
     const {id, imgUrl, name} = data
 
     return (
-      <Link className="link" to={`/playlists/${id}`}>
+      <Link className="link" to={`/playlists/new/${id}`}>
         <li className="album-details">
           <img src={imgUrl} className="album-img" alt={name} />
           <p className="album-desc">{name}</p>
@@ -22,4 +22,4 @@ class Featured extends Component {
   }
 }
 
-export default Featured
+export default NewReleases

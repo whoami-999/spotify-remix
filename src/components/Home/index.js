@@ -1,12 +1,14 @@
 import {Component} from 'react'
 import moment from 'moment'
 import GenreMood from '../GenreMood'
+import NewReleases from '../NewReleases'
 import Featured from '../FeaturedPlaylists'
 import './index.css'
 
 class Home extends Component {
   state = {
     isLoading: true,
+
     featuredPlaylists: [],
     genreAndMood: [],
     newReleases: [],
@@ -42,13 +44,14 @@ class Home extends Component {
         id: eachFeatured.id,
         imgUrl: eachFeatured.images[0].url,
         name: eachFeatured.name,
+        tracksList: eachFeatured.tracks.href,
       }),
     )
 
     const genreAndMoodsApi = 'https://api.spotify.com/v1/browse/categories'
     const genreAndMoodResponse = await fetch(genreAndMoodsApi, options)
     const genreAndMoodPlaylistData = await genreAndMoodResponse.json()
-    // console.log(genreAndMoodPlaylistData)
+
     const formattedGenreAndMoodsData = genreAndMoodPlaylistData.categories.items.map(
       each => ({
         id: each.id,
@@ -86,6 +89,7 @@ class Home extends Component {
 
   render() {
     const {isLoading, featuredPlaylists, genreAndMood, newReleases} = this.state
+    // console.log(newReleases)
     return (
       <div className="home-container">
         {isLoading ? (
@@ -107,9 +111,10 @@ class Home extends Component {
           </>
         )}
         <h1 className="sub-heading">New releases</h1>
+
         <ul className="album-container">
           {newReleases.map(each => (
-            <Featured key={each.id} data={each} />
+            <NewReleases key={each.id} data={each} />
           ))}
         </ul>
       </div>

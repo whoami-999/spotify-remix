@@ -4,8 +4,11 @@ dependencies:
   '@testing-library/user-event': 12.6.2
   axios: 0.21.1
   chalk: 4.1.0
+  convert-ms: 0.0.6
   moment: 2.29.1
+  pretty-ms: 7.0.1
   react: 17.0.1
+  react-audio-player: 0.17.0_react-dom@17.0.1+react@17.0.1
   react-dom: 17.0.1_react@17.0.1
   react-router-dom: 5.2.0_react@17.0.1
 devDependencies:
@@ -3965,6 +3968,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
+  /convert-ms/0.0.6:
+    dev: false
+    resolution:
+      integrity: sha512-4oLKOGXl6AjpRfPh/bvETIb9Sa+/WOrhERD0TY60wuryRCAil65n7Txi4oRbUQtMM7zt7XJuxsVy9sN/qfBmzw==
   /convert-source-map/0.3.5:
     dev: true
     resolution:
@@ -8880,6 +8887,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==
+  /parse-ms/2.1.0:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-kHt7kzLoS9VBZfUsiKjv43mr91ea+U05EyKkEtqp7vNbHxmaVuEqN7XxeEVnGrMtYOAxGrDElSi96K7EgO1zCA==
   /parse5/6.0.1:
     dev: true
     resolution:
@@ -9888,6 +9901,14 @@ packages:
       node: '>= 10'
     resolution:
       integrity: sha512-7AeGuCYNGmycyQbCqd/3PWH4eOoX/OiCa0uphp57NVTeAGdJGaAliecxwBDHYQCIvrW7aDBZCYeNTP/WX69mkg==
+  /pretty-ms/7.0.1:
+    dependencies:
+      parse-ms: 2.1.0
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q==
   /process-nextick-args/2.0.1:
     dev: true
     resolution:
@@ -10093,6 +10114,17 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-0sF4ny9v/B7s6aoehwze9vJNWcmCemAUYBVasscVr92+UYiEqDXOxfKjXN685mDaMRNF3WdhHQs76oTODMocFA==
+  /react-audio-player/0.17.0_react-dom@17.0.1+react@17.0.1:
+    dependencies:
+      prop-types: 15.7.2
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+    dev: false
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    resolution:
+      integrity: sha512-aCZgusPxA9HK7rLZcTdhTbBH9l6do9vn3NorgoDZRxRxJlOy9uZWzPaKjd7QdcuP2vXpxGA/61JMnnOEY7NXeA==
   /react-dev-utils/11.0.4:
     dependencies:
       '@babel/code-frame': 7.10.4
@@ -12764,6 +12796,7 @@ specifiers:
   '@testing-library/user-event': 12.6.2
   axios: 0.21.1
   chalk: 4.1.0
+  convert-ms: 0.0.6
   eslint-config-airbnb: 18.2.1
   eslint-config-prettier: 8.1.0
   eslint-plugin-prettier: 3.3.1
@@ -12772,7 +12805,9 @@ specifiers:
   moment: 2.29.1
   npm-run-all: 4.1.5
   prettier: 2.2.1
+  pretty-ms: 7.0.1
   react: 17.0.1
+  react-audio-player: 0.17.0
   react-dom: 17.0.1
   react-router-dom: 5.2.0
   react-scripts: 4.0.3

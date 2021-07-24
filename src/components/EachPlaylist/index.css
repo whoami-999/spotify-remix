@@ -1,0 +1,33 @@
+.album-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+}
+.list-item2 {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 20px;
+  padding-top: 20px;
+  display: flex;
+  cursor: pointer;
+
+  width: 150px;
+  height: 200px;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 0px;
+}
+.playlist-name {
+  padding-top: 0px;
+  color: white;
+}
+.no-tracks {
+  color: #64748b;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+.link {
+  text-decoration: none;
+}

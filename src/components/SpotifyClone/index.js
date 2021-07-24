@@ -8,10 +8,13 @@ class SpotifyClone extends Component {
     return (
       <div className="spotify-app-container">
         <div className="side-nav-container">
-          <img
-            src="https://res.cloudinary.com/df9mebfal/image/upload/v1626067850/Spotify/Vector_rif7kf.png"
-            alt="spotify"
-          />
+          <Link to="/about">
+            <img
+              src="https://res.cloudinary.com/df9mebfal/image/upload/v1626067850/Spotify/Vector_rif7kf.png"
+              alt="spotify"
+            />
+          </Link>
+
           <ul className="menus-container">
             <Link to="/about">
               <li className="list">

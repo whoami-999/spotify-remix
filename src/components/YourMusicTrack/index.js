@@ -32,7 +32,6 @@ class YourMusicTrack extends Component {
             {min}:{seconds}
           </p>
         </li>
-        <ReactAudioPlayer src={songLink} autoPlay controls />
       </>
     )
   }

@@ -51,7 +51,6 @@ class SpecificPlaylist extends Component {
     return (
       <ul className="playlist-container">
         <li className="playlist-item">
-          <p className="item1">#</p>
           <p className="item">Track</p>
           <p className="item">Album</p>
           <p className="item">Time</p>

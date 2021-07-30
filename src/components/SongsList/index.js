@@ -30,7 +30,6 @@ class SongsList extends Component {
     return (
       <>
         <li className="playlist-item">
-          <p className="item1">1</p>
           <p className="item">{trackName}</p>
           <p className="item">{albumName}</p>
           <p className="item a">
